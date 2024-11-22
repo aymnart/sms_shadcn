@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { ChevronRight } from "lucide-react";
+import { role } from "@/lib/data";
 
 import {
   Collapsible,
@@ -39,16 +40,20 @@ export function NavMain({ items }) {
               </CollapsibleTrigger>
               <CollapsibleContent>
                 <SidebarMenuSub>
-                  {item.items?.map((subItem) => (
-                    <SidebarMenuSubItem key={subItem.label}>
-                      <SidebarMenuSubButton>
-                        {subItem.icon && <subItem.icon />}
-                        <a href={subItem.href}>
-                          <span>{subItem.label}</span>
-                        </a>
-                      </SidebarMenuSubButton>
-                    </SidebarMenuSubItem>
-                  ))}
+                  {item.items?.map((subItem) => {
+                    if (subItem.visible.includes(role)) {
+                      return (
+                        <SidebarMenuSubItem key={subItem.label}>
+                          <SidebarMenuSubButton>
+                            {subItem.icon && <subItem.icon />}
+                            <a href={subItem.href}>
+                              <span>{subItem.label}</span>
+                            </a>
+                          </SidebarMenuSubButton>
+                        </SidebarMenuSubItem>
+                      );
+                    }
+                  })}
                 </SidebarMenuSub>
               </CollapsibleContent>
             </SidebarMenuItem>

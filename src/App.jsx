@@ -1,12 +1,12 @@
 import "./App.css";
-import Page from "./app/dashboard/page";
+import DashboardLayout from "./app/dashboard/layout";
 import { ThemeProvider } from "./components/theme-provider";
 
 function App() {
   return (
     <>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <Page />
+        <DashboardLayout />
       </ThemeProvider>
     </>
   );
