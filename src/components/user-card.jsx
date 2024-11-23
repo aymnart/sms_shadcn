@@ -1,9 +1,9 @@
 import { Ellipsis } from "lucide-react";
 const UserCard = ({ type }) => {
   return (
-    <div className="rounded-2xl p-4 flex-1 min-w-[130px] shadow">
+    <div className="rounded-lg border p-4 flex-1 min-w-[130px] shadow even:bg-secondary ">
       <div className="flex justify-between items-center">
-        <span className="text-[10px] bg-white px-2 py-1 rounded-full text-gray-900">
+        <span className="text-[10px] bg-white px-2 py-1 rounded-lg text-gray-900">
           2024/05
         </span>
         <Ellipsis />

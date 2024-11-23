@@ -4,6 +4,10 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    host: "0.0.0.0", // Expose to local network
+    port: 3000, // Optional: specify a port
+  },
   plugins: [react()],
   resolve: {
     alias: {

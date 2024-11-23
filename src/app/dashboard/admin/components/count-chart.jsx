@@ -16,8 +16,8 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 const chartData = [
-  { gender: "girls", count: 275, fill: "#333" },
-  { gender: "boys", count: 200, fill: "#5555" },
+  { gender: "girls", count: 275, fill: "hsl(var(--chart-1))" },
+  { gender: "boys", count: 200, fill: "hsl(var(--chart-2)" },
 ];
 // const total = chartData[0].count + chartData[1].count;
 // const gPercent = Math.round((chartData[0].count * 100) / total);
