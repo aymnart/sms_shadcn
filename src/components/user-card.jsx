@@ -1,11 +1,17 @@
 import { Ellipsis } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+
 const UserCard = ({ type }) => {
   return (
-    <div className="rounded-lg border p-4 flex-1 min-w-[130px] shadow even:bg-border ">
+    <div className="rounded-lg border p-4 flex-1 min-w-[130px] shadow odd:bg-background even:bg-border ">
       <div className="flex justify-between items-center">
-        <span className="text-[10px] bg-white px-2 py-1 rounded-lg text-gray-900">
-          2024/05
-        </span>
+        <Badge
+          variant="outline"
+          className="bg-white text-gray-900 border text-[10px] font-thin"
+        >
+          2024/12/25
+        </Badge>
+
         <Ellipsis />
       </div>
       <h1 className="text-2xl font-semibold my-4">1,234</h1>

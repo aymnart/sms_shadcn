@@ -12,18 +12,20 @@ import { AppSidebar } from "@/components/app-sidebar";
   <Route path="/student" element={<Student />} />
   <Route path="/parent" element={<Parent />} />
   <Route path="/teacher" element={<Teacher />} />
-</Routes>; 
+</Routes>;
 
 export default function DashboardLayout() {
   return (
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <Navbar />
-        <div className="m-4">
-          <Admin />
+        <div className="bg-background">
+          <Navbar />
+          <div className="m-4">
+            <Admin />
+          </div>
         </div>
-      </SidebarInset> 
+      </SidebarInset>
     </SidebarProvider>
   );
 }

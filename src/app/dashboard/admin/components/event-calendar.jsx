@@ -1,102 +1,106 @@
 import * as React from "react";
-import { buttonVariants } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { Calendar } from "@/components/ui/calendar";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { cn } from "@/lib/utils";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { DayPicker } from "react-day-picker";
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Ellipsis } from "lucide-react";
 
-function EventCalendar({
-  className,
-  classNames,
-  showOutsideDays = true,
-  ...props
-}) {
+const events = [
+  {
+    id: 1,
+    time: "09:00 AM",
+    title: "Morning Assembly",
+    description: "A gathering for all students and staff in the main hall.",
+  },
+  {
+    id: 2,
+    time: "10:30 AM",
+    title: "Math Class",
+    description: "Algebra and geometry lessons for Grade 10 in Room 201.",
+  },
+  {
+    id: 3,
+    time: "12:00 PM",
+    title: "Lunch Break",
+    description:
+      "A break for students and staff to have lunch in the cafeteria.",
+  },
+  {
+    id: 4,
+    time: "02:00 PM",
+    title: "Science Fair",
+    description: "Student presentations and exhibits in the science lab.",
+  },
+  {
+    id: 5,
+    time: "04:00 PM",
+    title: "Parent-Teacher Meeting",
+    description: "Scheduled meetings with parents in the staff room.",
+  },
+];
+
+export function EventCalendar() {
+  const [date, setDate] = React.useState(new Date());
+  let array = events.length > 3 ? events.slice(0, 3) : events; // limit the events to display to 3 elements
+
   return (
-    <DayPicker
-      showOutsideDays={showOutsideDays}
-      className={cn("p-3", className)}
-      classNames={{
-        months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
-        month: "space-y-4",
-        caption: "flex justify-center pt-1 relative items-center",
-        caption_label: "text-sm font-medium",
-        caption_dropdowns: "flex justify-center gap-1",
-        nav: "space-x-1 flex items-center",
-        nav_button: cn(
-          buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
-        ),
-        nav_button_previous: "absolute left-1",
-        nav_button_next: "absolute right-1",
-        table: "w-full border-collapse space-y-1",
-        head_row: "flex",
-        head_cell:
-          "text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]",
-        row: "flex w-full mt-2",
-        cell: "text-center text-sm p-0 relative [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
-        day: cn(
-          buttonVariants({ variant: "ghost" }),
-          "h-9 w-9 p-0 font-normal aria-selected:opacity-100"
-        ),
-        day_selected:
-          "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
-        day_today: "bg-accent text-accent-foreground",
-        day_outside: "text-muted-foreground opacity-50",
-        day_disabled: "text-muted-foreground opacity-50",
-        day_range_middle:
-          "aria-selected:bg-accent aria-selected:text-accent-foreground",
-        day_hidden: "invisible",
-        ...classNames,
-      }}
-      components={{
-        Dropdown: ({ value, onChange, children, ...props }) => {
-          const options = React.Children.toArray(children);
-          const selected = options.find((child) => child.props.value === value);
-          const handleChange = (value) => {
-            const changeEvent = {
-              target: { value },
-            };
-            onChange?.(changeEvent);
-          };
-          return (
-            <Select
-              value={value?.toString()}
-              onValueChange={(value) => {
-                handleChange(value);
-              }}
-            >
-              <SelectTrigger className="pr-1.5 focus:ring-0">
-                <SelectValue>{selected?.props?.children}</SelectValue>
-              </SelectTrigger>
-              <SelectContent position="popper">
-                <ScrollArea className="h-80">
-                  {options.map((option, id) => (
-                    <SelectItem
-                      key={`${option.props.value}-${id}`}
-                      value={option.props.value?.toString() ?? ""}
-                    >
-                      {option.props.children}
-                    </SelectItem>
-                  ))}
-                </ScrollArea>
-              </SelectContent>
-            </Select>
-          );
-        },
-        IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
-      }}
-      {...props}
-    />
+    <div>
+      <div className="w-fit ">
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          className="bg-background rounded-md border shadow-md"
+        />
+      </div>
+      {/* <div className="flex flex-col gap-2 my-8">
+        {array.map((event) => (
+          <Card
+            className="shadow-md rounded-md h-40 border-2 border-border border-t-4 odd:border-t-primary even:border-t-accent"
+            key={event.id}
+          >
+            <CardHeader className="h-fit m-0 ">
+              <CardTitle className="text-lg">{event.title} </CardTitle>
+            </CardHeader>
+            <CardContent>
+              {" "}
+              <CardDescription className="text-sm">
+                {event.description}
+              </CardDescription>
+            </CardContent>
+            <CardFooter className=" relative">
+              {" "}
+
+            </CardFooter>
+          </Card>
+        ))}
+      </div> */}
+      <div className="flex flex-col gap-2 my-4">
+        <div className="flex items-center justify-between mt-3">
+          <h1 className="text-lg font-semibold my-4"> Events </h1>
+          <Ellipsis />
+        </div>
+        {array.map((event) => (
+          <Card
+            className="p-5 rounded-md border-2 border-border border-t-4 odd:border-t-primary even:border-t-accent"
+            key={event.id}
+          >
+            <div className="flex items-center justify-between">
+              <CardTitle className="font-semibold text-md">
+                {event.title}
+              </CardTitle>
+              <Badge className={"w-fit"}>{event.time}</Badge>
+            </div>
+            <p className="mt-2 text-sm text-gray-500">{event.description}</p>
+          </Card>
+        ))}
+      </div>
+    </div>
   );
 }
-EventCalendar.displayName = "EventCalendar";
-
-export { EventCalendar };
