@@ -12,7 +12,7 @@ import { AppSidebar } from "@/components/app-sidebar";
   <Route path="/student" element={<Student />} />
   <Route path="/parent" element={<Parent />} />
   <Route path="/teacher" element={<Teacher />} />
-</Routes>;
+</Routes>; 
 
 export default function DashboardLayout() {
   return (
@@ -23,7 +23,7 @@ export default function DashboardLayout() {
         <div className="m-4">
           <Admin />
         </div>
-      </SidebarInset>
+      </SidebarInset> 
     </SidebarProvider>
   );
 }
