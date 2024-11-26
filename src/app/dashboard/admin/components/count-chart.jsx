@@ -52,10 +52,7 @@ export function CountChart() {
           <PieChart>
             <ChartTooltip content={<ChartTooltipContent nameKey="gender" />} />
             <Pie data={chartData} dataKey="count"></Pie>
-            <ChartLegend
-              content={<ChartLegendContent nameKey="gender" />}
-              className="-translate-y-2 flex-wrap gap-2 [&>*]:basis-1/4 [&>*]:justify-center"
-            />
+            <ChartLegend content={<ChartLegendContent nameKey="gender" />} />
           </PieChart>
         </ChartContainer>
       </CardContent>

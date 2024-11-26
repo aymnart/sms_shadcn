@@ -4,7 +4,7 @@ import OverviewTab from "./components/overview";
 
 export default function Admin() {
   return (
-    <div className="pl-8 ">
+    <div className="mt-20 lg:mx-4">
       <h1 className="text-2xl font-bold">Dashboard</h1>
       <Tabs defaultValue="overview" className="mt-4 w-full">
         <TabsList>

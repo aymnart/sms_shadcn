@@ -91,12 +91,7 @@ export function FinanceChart() {
                 r: 5,
               }}
             >
-              <LabelList
-                position="top"
-                offset={12}
-                className="fill-foreground"
-                fontSize={10}
-              />
+              <LabelList position="top" offset={12} fontSize={10} />
             </Line>
             <Line
               dataKey="expense"
@@ -110,12 +105,7 @@ export function FinanceChart() {
                 r: 5,
               }}
             >
-              <LabelList
-                position="top"
-                offset={12}
-                className="fill-foreground"
-                fontSize={10}
-              />
+              <LabelList position="top" offset={12} fontSize={10} />
             </Line>
           </LineChart>
         </ChartContainer>

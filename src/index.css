@@ -9,7 +9,7 @@
     --sidebar: 222 15% 25%; /* Subtle dark navy for sidebar */
     --sidebar-foreground: 0 0% 100%; /* Pure white for text */
     --sidebar-secondary: 222 15% 30%; /* Slightly lighter navy for secondary elements */
-    --sidebar-accent: 207 90% 55%; /* Bright cyan for hover or active states */
+    --sidebar-accent: 33 95% 56%; /* Vibrant orange for hover or active states */
     --background: 0 0% 98%; /* Very light gray for background */
     --foreground: 222 15% 15%; /* Dark gray for text */
     --card: 0 0% 100%; /* White cards for contrast */
@@ -22,7 +22,7 @@
     --secondary-foreground: 0 0% 98%; /* Almost white text */
     --muted: 222 15% 90%; /* Light gray for muted elements */
     --muted-foreground: 222 15% 50%; /* Medium gray text */
-    --accent: 207 90% 55%; /* Warm orange for accents */
+    --accent: 33 95% 56%; /* Vibrant orange for accents */
     --accent-foreground: 0 0% 100%; /* White for text on accents */
     --destructive: 0 78% 55%; /* Strong red for destructive actions */
     --destructive-foreground: 0 0% 98%; /* Almost white text */
@@ -30,9 +30,9 @@
     --input: 222 15% 90%; /* Matches muted background for inputs */
     --ring: 207 90% 55%; /* Matches primary for focus rings */
     --radius: 0.75rem; /* Rounded corners for a modern touch */
-    --chart-1: 220 80% 50%; /* Bright blue for charts */
-    --chart-2: 160 70% 45%; /* Teal for contrast */
-    --chart-3: 44 85% 55%; /* Green for variety */
+    --chart-1: 207 90% 55%; /* Cyan for consistency with primary */
+    --chart-2: 33 95% 56%; /* Matches accent orange */
+    --chart-3: 44 85% 55%; /* Bright green for variety */
     --chart-4: 280 65% 60%; /* Purple for secondary data */
     --chart-5: 340 75% 55%; /* Pink for highlights */
   }
@@ -41,7 +41,7 @@
     --sidebar: 222 15% 12%; /* Deep navy for dark mode sidebar */
     --sidebar-foreground: 0 0% 100%; /* White text */
     --sidebar-secondary: 222 15% 18%; /* Slightly lighter for secondary */
-    --sidebar-accent: 207 90% 65%; /* Vibrant cyan */
+    --sidebar-accent: 33 95% 46%; /* Slightly deeper orange for dark mode */
     --background: 222 15% 10%; /* Very dark navy for background */
     --foreground: 0 0% 98%; /* Almost white for text */
     --card: 222 15% 15%; /* Dark navy for cards */
@@ -54,15 +54,15 @@
     --secondary-foreground: 0 0% 98%; /* White text */
     --muted: 222 15% 12%; /* Slightly lighter background for muted */
     --muted-foreground: 222 15% 60%; /* Medium gray text */
-    --accent: 207 90% 55%; /* Warm orange */
+    --accent: 33 95% 46%; /* Deeper orange for dark mode */
     --accent-foreground: 0 0% 100%; /* White text */
     --destructive: 0 78% 45%; /* Strong red */
     --destructive-foreground: 0 0% 100%; /* White text */
     --border: 222 15% 25%; /* Subtle border color */
     --input: 222 15% 18%; /* Slightly lighter input background */
-    --ring: 207 90% 55%; /* Cyan for focus */
-    --chart-1: 220 80% 60%; /* Bright blue */
-    --chart-2: 160 70% 55%; /* Teal */
+    --ring: 207 90% 65%; /* Cyan for focus */
+    --chart-1: 207 90% 65%; /* Cyan for consistency with primary */
+    --chart-2: 33 95% 46%; /* Matches dark mode accent */
     --chart-3: 44 85% 65%; /* Bright green */
     --chart-4: 280 65% 70%; /* Brighter purple */
     --chart-5: 340 75% 65%; /* Brighter pink */
@@ -75,5 +75,11 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  ::selection {
+    @apply bg-accent text-accent-foreground;
   }
 }
