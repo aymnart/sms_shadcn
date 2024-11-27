@@ -1,13 +1,28 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import DashboardLayout from "./app/dashboard/layout";
-import { ThemeProvider } from "./components/theme-provider";
+import { AppSidebar } from "./components/app-sidebar";
+import Navbar from "./components/navbar";
+import { SidebarInset, SidebarProvider } from "./components/ui/sidebar";
+import AdminDashboard from "./app/dashboard/admin-dashboard";
 
 function App() {
   return (
     <>
-      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <DashboardLayout />
-      </ThemeProvider>
+      <SidebarProvider>
+        <AppSidebar />
+        <SidebarInset>
+          <div className="bg-background ">
+            <div className="flex justify-center w-full">
+              <Navbar />
+            </div>
+            <div className="m-4">
+              <Routes>
+                <Route path="/" element={<AdminDashboard />} />
+              </Routes>
+            </div>
+          </div>
+        </SidebarInset>
+      </SidebarProvider>
     </>
   );
 }

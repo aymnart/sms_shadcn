@@ -1,6 +1,11 @@
 import * as React from "react";
 import { Calendar } from "@/components/ui/calendar";
-import { Card, CardDescription, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar1, Ellipsis } from "lucide-react";
 
@@ -43,7 +48,7 @@ export function EventCalendar() {
   let array = events.length > 3 ? events.slice(0, 3) : events; // limit the events to display to 3 elements
 
   return (
-    <div className="w-full">
+    <div className="">
       <div className="w-fit ">
         <Calendar
           mode="single"
@@ -53,10 +58,10 @@ export function EventCalendar() {
         />
       </div>
 
-      <div className="flex w-full flex-col gap-2 my-4">
-        <div className="flex items-center justify-between mt-3">
-          <h1 className="text-lg flex justify-between items-center font-semibold my-4">
-            <Calendar1 className="mr-4" /> Events{" "}
+      <div className="cardLayout">
+        <div className="cardHeader">
+          <h1 className="flex">
+            <Calendar1 className="mr-4" /> Events
           </h1>
           <Ellipsis />
         </div>

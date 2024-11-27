@@ -22,13 +22,14 @@ import {
   Dock,
   School,
 } from "lucide-react";
-
+import { role } from "./data";
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
+    name: "User",
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
+    role: role,
   },
   schools: [
     {

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { BadgeCheck, Bell, CreditCard, LogOut, Sparkles } from "lucide-react";
+import { Bell, LogOut, Settings, Sparkles, UserCircle } from "lucide-react";
 import { CircleUserRound } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -38,7 +38,7 @@ export function NavUser({ user }) {
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold">{user.name}</span>
-                <span className="truncate text-xs">{user.email}</span>
+                <span className="truncate text-xs opacity-60">{user.role}</span>
               </div>
             </SidebarMenuButton>
           </DropdownMenuTrigger>
@@ -58,7 +58,7 @@ export function NavUser({ user }) {
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">{user.name}</span>
-                  <span className="truncate text-xs">{user.email}</span>
+                  <span className="truncate text-xs">{user.role}</span>
                 </div>
               </div>
             </DropdownMenuLabel>
@@ -72,12 +72,12 @@ export function NavUser({ user }) {
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem className="cursor-pointer">
-                <BadgeCheck />
+                <UserCircle />
                 Account
               </DropdownMenuItem>
               <DropdownMenuItem className="cursor-pointer">
-                <CreditCard />
-                Billing
+                <Settings />
+                Settings
               </DropdownMenuItem>
               <DropdownMenuItem className="cursor-pointer">
                 <Bell />

@@ -39,12 +39,12 @@ const chartConfig = {
 
 export function CountChart() {
   return (
-    <Card className="flex flex-col">
-      <CardHeader className="items-center pb-0">
+    <Card className="flex h-full flex-col">
+      <CardHeader className="items-center">
         <CardTitle>Students</CardTitle>
         <CardDescription>by gender</CardDescription>
       </CardHeader>
-      <CardContent className="flex-1 pb-0">
+      <CardContent className="flex-1">
         <ChartContainer
           config={chartConfig}
           className="mx-auto aspect-square max-h-[300px]"

@@ -1,9 +1,11 @@
-import UserCard from "@/components/user-card";
+import UserCard from "@/app/dashboard/components/user-card";
 import { CountChart } from "./count-chart";
 import { AttendanceChart } from "./attendance-chart";
 import { FinanceChart } from "./finance-chart";
 import { EventCalendar } from "./event-calendar";
 import Announcements from "./announcements";
+import { DollarSign, GraduationCap, UserPen, Users } from "lucide-react";
+import PeepAnimation from "@/components/peeps-animation";
 
 export default function OverviewTab() {
   return (
@@ -11,11 +13,22 @@ export default function OverviewTab() {
       {/* LEFT */}
       <div className="w-full lg:w-2/3 flex flex-col gap-8">
         {/* USER CARDS */}
-        <div className="flex gap-4 justify-between flex-wrap ">
-          <UserCard type="student" />
-          <UserCard type="teacher" />
-          <UserCard type="parent" />
-          <UserCard type="staff" />
+        <div className="flex gap-4 flex-wrap ">
+          <UserCard
+            title="Revenue"
+            num="5296"
+            stat={20.8}
+            Icon={DollarSign}
+            m={"dt"}
+          />
+          <UserCard title="Students" num="100" stat={-5} Icon={UserPen} />
+          <UserCard
+            title="Teachers"
+            num="33"
+            stat={20.8}
+            Icon={GraduationCap}
+          />
+          <UserCard title="Staff" num="7" stat={9} Icon={Users} />
         </div>
 
         {/* MIDDLE CHARTS */}
@@ -42,6 +55,7 @@ export default function OverviewTab() {
         </div>
 
         <Announcements />
+        <PeepAnimation />
       </div>
     </div>
   );

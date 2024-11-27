@@ -1,5 +1,6 @@
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Megaphone } from "lucide-react";
 
 const announcements = [
   {
@@ -44,18 +45,20 @@ const Announcements = () => {
     announcements.length > 3 ? announcements.slice(0, 3) : announcements; // limit the events to display to 3 elements
 
   return (
-    <div className="bg-background mt-4 rounded-xl shadow">
+    <div className=" mt-4 rounded-xl">
       <div className="flex items-center justify-between">
-        <h1 className="text-lg font-semibold">Announcements</h1>
+        <h1 className="cardHeader">
+          <Megaphone className=" mr-4" /> Announcements
+        </h1>
         <span className="capitalize text-xs text-gray-400 cursor-pointer">
           view all
         </span>
       </div>
-      <div className="flex flex-col gap-4 mt-4">
+      <div className="cardLayout">
         {array.map((el) => (
           <Card
             key={el.id}
-            className="odd:bg-card even:bg-border m rounded-md p-4"
+            className="odd:bg-card even:bg-border m-0 rounded-md p-4"
           >
             <div className="flex items-center  justify-between mb-2">
               <CardTitle className=" text-md font-semibold">

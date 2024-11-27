@@ -50,7 +50,7 @@ const chartConfig = {
 export function FinanceChart() {
   return (
     <Card>
-      <CardHeader className="items-center pb-0 ">
+      <CardHeader className=" items-center pb-0 ">
         <CardTitle>Finance</CardTitle>
         <CardDescription>Incomes and expenses for each month</CardDescription>
       </CardHeader>

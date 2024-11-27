@@ -1,20 +1,10 @@
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import { Routes, Route } from "react-router-dom";
-import Admin from "./admin/admin";
-import Student from "./student/student";
-import Parent from "./parent/parent";
-import Teacher from "./teacher/teacher";
+import AdminDashboard from "./dashboard/admin-dashboard";
 import Navbar from "@/components/navbar";
 import { AppSidebar } from "@/components/app-sidebar";
+import { Route, Routes } from "react-router-dom";
 
-<Routes>
-  <Route path="/admin" element={<Admin />} />
-  <Route path="/student" element={<Student />} />
-  <Route path="/parent" element={<Parent />} />
-  <Route path="/teacher" element={<Teacher />} />
-</Routes>;
-
-export default function DashboardLayout() {
+export default function AppLayout() {
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -24,7 +14,9 @@ export default function DashboardLayout() {
             <Navbar />
           </div>
           <div className="m-4">
-            <Admin />
+            <Routes>
+              <Route path="/dashboard" element={<AdminDashboard />} />
+            </Routes>
           </div>
         </div>
       </SidebarInset>

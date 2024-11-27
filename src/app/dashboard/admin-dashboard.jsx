@@ -1,8 +1,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Navigate } from "react-router-dom";
 import OverviewTab from "./components/overview";
+import { FinanceChart } from "./components/finance-chart";
 
-export default function Admin() {
+export default function AdminDashboard() {
   return (
     <div className="mt-20 lg:mx-4">
       <h1 className="text-2xl font-bold">Dashboard</h1>
@@ -15,11 +15,9 @@ export default function Admin() {
         <TabsContent value="overview">
           <OverviewTab />
         </TabsContent>
-        <TabsContent value="analytics">
-          <Navigate to={"/analytics"} />
-        </TabsContent>
+        <TabsContent value="analytics"></TabsContent>
         <TabsContent value="finance">
-          <Navigate to={"/finance"} />
+          <FinanceChart />
         </TabsContent>
       </Tabs>
     </div>

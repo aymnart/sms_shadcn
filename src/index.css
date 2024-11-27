@@ -30,8 +30,8 @@
     --input: 222 15% 90%; /* Matches muted background for inputs */
     --ring: 207 90% 55%; /* Matches primary for focus rings */
     --radius: 0.75rem; /* Rounded corners for a modern touch */
-    --chart-1: 207 90% 55%; /* Cyan for consistency with primary */
-    --chart-2: 33 95% 56%; /* Matches accent orange */
+    --chart-1: var(--primary); /* Cyan for consistency with primary */
+    --chart-2: var(--accent); /* Matches accent orange */
     --chart-3: 44 85% 55%; /* Bright green for variety */
     --chart-4: 280 65% 60%; /* Purple for secondary data */
     --chart-5: 340 75% 55%; /* Pink for highlights */
@@ -61,8 +61,8 @@
     --border: 222 15% 25%; /* Subtle border color */
     --input: 222 15% 18%; /* Slightly lighter input background */
     --ring: 207 90% 65%; /* Cyan for focus */
-    --chart-1: 207 90% 65%; /* Cyan for consistency with primary */
-    --chart-2: 33 95% 46%; /* Matches dark mode accent */
+    --chart-1: var(--primary); /* Cyan for consistency with primary */
+    --chart-2: var(--accent); /* Matches dark mode accent */
     --chart-3: 44 85% 65%; /* Bright green */
     --chart-4: 280 65% 70%; /* Brighter purple */
     --chart-5: 340 75% 65%; /* Brighter pink */
@@ -81,5 +81,11 @@
 @layer base {
   ::selection {
     @apply bg-accent text-accent-foreground;
+  }
+  .cardLayout {
+    @apply flex flex-col gap-2 mt-4;
+  }
+  .cardHeader {
+    @apply text-lg flex justify-between items-center font-semibold my-2;
   }
 }
