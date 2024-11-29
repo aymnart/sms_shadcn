@@ -29,11 +29,14 @@ export function NavMain({ items }) {
             key={item.title}
             asChild
             defaultOpen={item.isActive}
-            className="group/collapsible"
+            className=" group/collapsible"
           >
             <SidebarMenuItem className="py-2">
               <CollapsibleTrigger asChild>
-                <SidebarMenuButton tooltip={item.title}>
+                <SidebarMenuButton
+                  className="bg-zinc-50/5 rounded-md"
+                  tooltip={item.title}
+                >
                   {item.icon && <item.icon />}
                   <span className="pl-1">{item.title}</span>
                   <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />

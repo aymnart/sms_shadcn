@@ -1,8 +1,10 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import OverviewTab from "./components/overview";
 import { FinanceChart } from "./components/finance-chart";
+import useDocumentTitle from "@/hooks/use-document-title";
 
 export default function AdminDashboard() {
+  useDocumentTitle("Dashboard");
   return (
     <div className="mt-20 lg:mx-4">
       <h1 className="text-2xl font-bold">Dashboard</h1>

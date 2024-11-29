@@ -4,8 +4,7 @@ import { AttendanceChart } from "./attendance-chart";
 import { FinanceChart } from "./finance-chart";
 import { EventCalendar } from "./event-calendar";
 import Announcements from "./announcements";
-import { DollarSign, GraduationCap, UserPen, Users } from "lucide-react";
-import PeepAnimation from "@/components/peeps-animation";
+import { DollarSign, GraduationCap, User, Users } from "lucide-react";
 
 export default function OverviewTab() {
   return (
@@ -17,11 +16,11 @@ export default function OverviewTab() {
           <UserCard
             title="Revenue"
             num="5296"
-            stat={20.8}
+            stat={0}
             Icon={DollarSign}
             m={"dt"}
           />
-          <UserCard title="Students" num="100" stat={-5} Icon={UserPen} />
+          <UserCard title="Students" num="100" stat={-5} Icon={User} />
           <UserCard
             title="Teachers"
             num="33"
@@ -55,7 +54,6 @@ export default function OverviewTab() {
         </div>
 
         <Announcements />
-        <PeepAnimation />
       </div>
     </div>
   );
