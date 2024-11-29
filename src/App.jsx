@@ -4,6 +4,7 @@ import { AppSidebar } from "./components/app-sidebar";
 import Navbar from "./components/navbar";
 import { SidebarInset, SidebarProvider } from "./components/ui/sidebar";
 import AdminDashboard from "./app/dashboard/admin-dashboard";
+import TeachersList from "./app/teachers-list/teachers-list";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <div className="m-4">
               <Routes>
                 <Route path="/" element={<AdminDashboard />} />
+                <Route path="/list/teachers" element={<TeachersList />} />
               </Routes>
             </div>
           </div>

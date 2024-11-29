@@ -34,7 +34,7 @@ const UserCard = ({ title, num, stat, Icon, m }) => {
         <div className="text-xl font-bold">
           {num} <span className="opacity-60 text-xs">{m}</span>
         </div>
-        <p className="items-center gap-1 text-xs text-muted-foreground">
+        <p className="items-center text-xs text-muted-foreground">
           <span className={color}>
             <Trend stat={stat} />
             {stat}%
