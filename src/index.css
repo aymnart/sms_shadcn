@@ -16,8 +16,12 @@
     --info-foreground: 0 0% 100%;
     --sidebar: 222 15% 25%; /* Subtle dark navy for sidebar */
     --sidebar-foreground: 0 0% 100%; /* Pure white for text */
-    --sidebar-secondary: 222 15% 30%; /* Slightly lighter navy for secondary elements */
-    --sidebar-accent: 33 95% 56%; /* Vibrant orange for hover or active states */
+    --sidebar-secondary: var(
+      --secondary
+    ); /* Slightly lighter navy for secondary elements */
+    --sidebar-accent: var(
+      --accent
+    ); /* Vibrant orange for hover or active states */
     --background: 0 0% 98%; /* Very light gray for background */
     --foreground: 222 15% 15%; /* Dark gray for text */
     --card: 0 0% 100%; /* White cards for contrast */
@@ -26,11 +30,11 @@
     --popover-foreground: 222 15% 15%; /* Matches text */
     --primary: 207 90% 55%; /* Vibrant cyan for primary elements */
     --primary-foreground: 0 0% 100%; /* White for text on primary */
-    --secondary: 222 15% 35%; /* Neutral dark gray for secondary */
+    --secondary: 33 95% 56%; /* Vibrant orange for accents */
     --secondary-foreground: 0 0% 98%; /* Almost white text */
     --muted: 222 15% 90%; /* Light gray for muted elements */
     --muted-foreground: 222 15% 50%; /* Medium gray text */
-    --accent: 33 95% 56%; /* Vibrant orange for accents */
+    --accent: 222 15% 35%; /* Neutral dark gray for secondary */
     --accent-foreground: 0 0% 100%; /* White for text on accents */
     --destructive: 0 78% 55%; /* Strong red for destructive actions */
     --destructive-foreground: 0 0% 98%; /* Almost white text */
@@ -39,7 +43,7 @@
     --ring: 207 90% 55%; /* Matches primary for focus rings */
     --radius: 0.75rem; /* Rounded corners for a modern touch */
     --chart-1: var(--primary); /* Cyan for consistency with primary */
-    --chart-2: var(--accent); /* Matches accent orange */
+    --chart-2: var(--secondary); /* Matches accent orange */
     --chart-3: 44 85% 55%; /* Bright green for variety */
     --chart-4: 280 65% 60%; /* Purple for secondary data */
     --chart-5: 340 75% 55%; /* Pink for highlights */
@@ -56,8 +60,8 @@
     --info-foreground: 193 81% 84%;
     --sidebar: 222 15% 12%; /* Deep navy for dark mode sidebar */
     --sidebar-foreground: 0 0% 100%; /* White text */
-    --sidebar-secondary: 222 15% 18%; /* Slightly lighter for secondary */
-    --sidebar-accent: 33 95% 46%; /* Slightly deeper orange for dark mode */
+    --sidebar-secondary: var(--secondary); /* Slightly lighter for secondary */
+    --sidebar-accent: var(--accent); /* Slightly deeper orange for dark mode */
     --background: 222 15% 10%; /* Very dark navy for background */
     --foreground: 0 0% 98%; /* Almost white for text */
     --card: 222 15% 15%; /* Dark navy for cards */
@@ -66,11 +70,11 @@
     --popover-foreground: 0 0% 98%; /* Matches text */
     --primary: 207 90% 65%; /* Vibrant cyan */
     --primary-foreground: 0 0% 100%; /* White text */
-    --secondary: 222 15% 20%; /* Neutral gray for secondary elements */
+    --secondary: 33 95% 46%; /* Deeper orange for dark mode */
     --secondary-foreground: 0 0% 98%; /* White text */
     --muted: 222 15% 12%; /* Slightly lighter background for muted */
     --muted-foreground: 222 15% 60%; /* Medium gray text */
-    --accent: 33 95% 46%; /* Deeper orange for dark mode */
+    --accent: 222 15% 20%; /* Neutral gray for secondary elements */
     --accent-foreground: 0 0% 100%; /* White text */
     --destructive: 0 78% 45%; /* Strong red */
     --destructive-foreground: 0 0% 100%; /* White text */
@@ -78,7 +82,7 @@
     --input: 222 15% 18%; /* Slightly lighter input background */
     --ring: 207 90% 65%; /* Cyan for focus */
     --chart-1: var(--primary); /* Cyan for consistency with primary */
-    --chart-2: var(--accent); /* Matches dark mode accent */
+    --chart-2: var(--secondary); /* Matches dark mode accent */
     --chart-3: 44 85% 65%; /* Bright green */
     --chart-4: 280 65% 70%; /* Brighter purple */
     --chart-5: 340 75% 65%; /* Brighter pink */

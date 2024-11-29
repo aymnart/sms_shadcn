@@ -13,7 +13,7 @@ function App() {
         <AppSidebar />
         <SidebarInset>
           <div className="bg-background ">
-            <div className="flex justify-center w-full">
+            <div className="flex relative justify-center w-full">
               <Navbar />
             </div>
             <div className="m-4">

@@ -67,7 +67,7 @@ export function EventCalendar() {
         </div>
         {array.map((event) => (
           <Card
-            className=" p-5 rounded-md border border-border border-l-4 odd:border-l-primary even:border-l-accent"
+            className=" p-5 rounded-md border border-border border-l-4 odd:border-l-primary even:border-l-secondary"
             key={event.id}
           >
             <div className="flex items-center justify-between">

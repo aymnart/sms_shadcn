@@ -23,7 +23,7 @@ const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
 const SIDEBAR_WIDTH = "16rem";
 const SIDEBAR_WIDTH_MOBILE = "16rem";
 const SIDEBAR_WIDTH_ICON = "3rem";
-const SIDEBAR_KEYBOARD_SHORTCUT = "j";
+const SIDEBAR_KEYBOARD_SHORTCUT = "q";
 
 const SidebarContext = React.createContext(null);
 

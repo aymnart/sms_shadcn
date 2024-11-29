@@ -25,7 +25,7 @@ const UserCard = ({ title, num, stat, Icon, m }) => {
       : "flex gap-1 items-center text-destructive ";
 
   return (
-    <Card className=" flex-1 min-w-[130px] shadow border-t-4 odd:border-t-primary even:border-t-accent odd:bg-background even:bg-border ">
+    <Card className=" flex-1 min-w-[130px] shadow border-t-4 odd:border-t-primary even:border-t-secondary odd:bg-background even:bg-border ">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-sm font-medium">{title}</CardTitle>
         <IconComponent Icon={Icon} />
