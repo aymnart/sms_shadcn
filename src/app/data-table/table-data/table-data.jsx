@@ -1,71 +1,41 @@
 import {
-  ArrowDown,
-  ArrowRight,
-  ArrowUp,
-  CheckCircle,
-  Circle,
-  CircleOff,
-  HelpCircle,
-  Timer,
-} from "lucide-react"
+  Accessibility,
+  AtomIcon,
+  Brush,
+  Computer,
+  Languages,
+  Ruler,
+} from "lucide-react";
 
-export const labels = [
+export const categories = [
   {
-    value: "bug",
-    label: "Bug",
+    value: "Science",
+    label: "Science",
+    icon: AtomIcon,
   },
   {
-    value: "feature",
-    label: "Feature",
+    value: "Mathematics",
+    label: "Mathematics",
+    icon: Ruler,
   },
   {
-    value: "documentation",
-    label: "Documentation",
-  },
-]
-
-export const statuses = [
-  {
-    value: "backlog",
-    label: "Backlog",
-    icon: HelpCircle,
+    value: "Technology",
+    label: "Technology",
+    icon: Computer,
   },
   {
-    value: "todo",
-    label: "Todo",
-    icon: Circle,
+    value: "Arts",
+    label: "Arts",
+    icon: Brush,
   },
   {
-    value: "in progress",
-    label: "In Progress",
-    icon: Timer,
+    value: "Humanities",
+    label: "Humanities",
+    icon: Accessibility,
   },
   {
-    value: "done",
-    label: "Done",
-    icon: CheckCircle,
+    value: "Language Arts",
+    label: "Language Arts",
+    icon: Languages,
   },
-  {
-    value: "canceled",
-    label: "Canceled",
-    icon: CircleOff,
-  },
-]
-
-export const priorities = [
-  {
-    label: "Low",
-    value: "low",
-    icon: ArrowDown,
-  },
-  {
-    label: "Medium",
-    value: "medium",
-    icon: ArrowRight,
-  },
-  {
-    label: "High",
-    value: "high",
-    icon: ArrowUp,
-  },
-]
+];

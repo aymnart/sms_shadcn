@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { DataTableFacetedFilter } from "./data-table-faceted-filter";
-import { priorities, statuses } from "../table-data/table-data";
+import { categories } from "../table-data/table-data";
 import { X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -13,27 +13,21 @@ export function DataTableToolbar({ table }) {
     <div className="flex items-center justify-between">
       <div className="flex flex-1 items-center space-x-2">
         <Input
-          placeholder="Filter tasks..."
-          value={table.getColumn("title")?.getFilterValue() ?? ""}
+          placeholder="Filter teachers..."
+          value={table.getColumn("name")?.getFilterValue() ?? ""}
           onChange={(event) =>
-            table.getColumn("title")?.setFilterValue(event.target.value)
+            table.getColumn("name")?.setFilterValue(event.target.value)
           }
           className="h-8 w-[150px] lg:w-[250px]"
         />
-        {table.getColumn("status") && (
+        {table.getColumn("category") && (
           <DataTableFacetedFilter
-            column={table.getColumn("status")}
-            title="Status"
-            options={statuses}
+            column={table.getColumn("category")}
+            title="Category"
+            options={categories}
           />
         )}
-        {table.getColumn("priority") && (
-          <DataTableFacetedFilter
-            column={table.getColumn("priority")}
-            title="Priority"
-            options={priorities}
-          />
-        )}
+
         {isFiltered && (
           <Button
             variant="ghost"

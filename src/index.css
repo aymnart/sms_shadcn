@@ -100,7 +100,7 @@
 
 @layer base {
   ::selection {
-    @apply bg-accent text-accent-foreground;
+    @apply bg-secondary text-accent-foreground;
   }
   .cardLayout {
     @apply flex flex-col gap-2 mt-4;

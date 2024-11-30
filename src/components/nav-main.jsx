@@ -34,7 +34,7 @@ export function NavMain({ items }) {
             <SidebarMenuItem className="py-2">
               <CollapsibleTrigger asChild>
                 <SidebarMenuButton
-                  className="bg-zinc-50/5 rounded-md"
+                  className="text-primary"
                   tooltip={item.title}
                 >
                   {item.icon && <item.icon />}

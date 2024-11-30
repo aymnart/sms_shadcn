@@ -11,7 +11,7 @@ function App() {
     <>
       <SidebarProvider>
         <AppSidebar />
-        <SidebarInset>
+        <SidebarInset className="lg:px-4">
           <div className="bg-background ">
             <div className="flex relative justify-center w-full">
               <Navbar />
