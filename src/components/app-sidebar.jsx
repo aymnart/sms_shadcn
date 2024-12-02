@@ -1,5 +1,3 @@
-//import * as React from "react";
-
 import data from "@/lib/menu-data";
 import { NavMain } from "@/components/nav-main";
 import { NavUser } from "@/components/nav-user";

@@ -1,8 +1,7 @@
 import * as React from "react";
-
 import { cn } from "@/lib/utils";
 
-const Input = React.forwardRef(({ className, type, ...props }) => {
+const Input = React.forwardRef(({ className, type = "text", ...props }) => {
   const inputRef = React.useRef();
 
   const handleShortcut = (event) => {

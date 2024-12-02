@@ -2,29 +2,27 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { AppSidebar } from "./components/app-sidebar";
 import Navbar from "./components/navbar";
-import { SidebarInset, SidebarProvider } from "./components/ui/sidebar";
+import { SidebarInset } from "./components/ui/sidebar";
 import AdminDashboard from "./app/dashboard/admin-dashboard";
-import TeachersList from "./app/teachers-list/teachers-list";
+import TeachersPage from "./app/teachers-page/teachers-page";
 
 function App() {
   return (
     <>
-      <SidebarProvider>
-        <AppSidebar />
-        <SidebarInset className="lg:px-4">
-          <div className="bg-background ">
-            <div className="flex relative justify-center w-full">
-              <Navbar />
-            </div>
-            <div className="m-4">
-              <Routes>
-                <Route path="/" element={<AdminDashboard />} />
-                <Route path="/list/teachers" element={<TeachersList />} />
-              </Routes>
-            </div>
+      <AppSidebar />
+      <SidebarInset>
+        <div className="bg-background ">
+          <div className="flex relative justify-center w-full">
+            <Navbar />
           </div>
-        </SidebarInset>
-      </SidebarProvider>
+          <div className="m-4">
+            <Routes>
+              <Route path="/" element={<AdminDashboard />} />
+              <Route path="/list/teachers" element={<TeachersPage />} />
+            </Routes>
+          </div>
+        </div>
+      </SidebarInset>
     </>
   );
 }

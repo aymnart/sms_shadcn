@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { DataTableFacetedFilter } from "./data-table-faceted-filter";
-import { categories } from "../table-data/table-data";
+import { teachersCategories } from "../../teachers-page/table-data/filterable_teacher_columns";
 import { X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -24,7 +24,7 @@ export function DataTableToolbar({ table }) {
           <DataTableFacetedFilter
             column={table.getColumn("category")}
             title="Category"
-            options={categories}
+            options={teachersCategories}
           />
         )}
 

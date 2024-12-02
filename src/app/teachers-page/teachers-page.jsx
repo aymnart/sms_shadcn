@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { z } from "zod";
-import { columns } from "./components/columns";
-import { DataTable } from "./components/data-table";
-import { teacherSchema } from "./table-data/schema";
+import { teachersColumns } from "./teachers-columns";
+import { DataTable } from "../data-table/components/data-table";
+import { teacherSchema } from "./table-data/teacherSchema";
 
 // Simulate a database schema validation using Zod
 const validateTeachers = (teachers) => z.array(teacherSchema).parse(teachers);
@@ -17,7 +17,7 @@ function TeachersPage() {
       try {
         const response = await fetch("/teachers.json"); // Adjust the path as per your public folder setup
         if (!response.ok) {
-          throw new Error("Failed to fetch tasks");
+          throw new Error("Failed to fetch teachers");
         }
         const data = await response.json();
 
@@ -26,7 +26,7 @@ function TeachersPage() {
         setTeachers(validTeachers);
       } catch (err) {
         setError(err.message);
-        console.error("Error fetching tasks:", err);
+        console.error("Error fetching teachers:", err);
       }
     };
 
@@ -39,7 +39,7 @@ function TeachersPage() {
         <p className="text-red-500">Error: {error}</p>
       ) : (
         <>
-          <div className="h-full flex-1 flex-col space-y-8  flex">
+          <div className="flex-1 flex-col space-y-8  flex">
             <div className="flex items-center justify-between space-y-2">
               <div>
                 <h2 className="text-2xl font-bold tracking-tight">
@@ -50,7 +50,7 @@ function TeachersPage() {
                 </p>
               </div>
             </div>
-            <DataTable data={teachers} columns={columns} />
+            <DataTable data={teachers} columns={teachersColumns} />
           </div>
         </>
       )}

@@ -2,7 +2,6 @@ import {
   AudioWaveform,
   PersonStanding,
   Calendar,
-  Megaphone,
   ClipboardList,
   BookOpen,
   BookOpenText,
@@ -13,8 +12,6 @@ import {
   House,
   UserPen,
   GraduationCap,
-  Handshake,
-  MessageCircleMore,
   User,
   Users,
   Notebook,
@@ -33,17 +30,17 @@ const data = {
   },
   schools: [
     {
-      name: "Acme Inc",
+      name: "Ariana",
       logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      plan: "Premium",
     },
     {
-      name: "Acme Corp.",
+      name: "Tunis",
       logo: AudioWaveform,
-      plan: "Startup",
+      plan: "Premium",
     },
     {
-      name: "Evil Corp.",
+      name: "Mahdia",
       logo: Command,
       plan: "Free",
     },
@@ -61,6 +58,7 @@ const data = {
           href: "/",
           visible: ["admin", "teacher", "student", "parent"],
         },
+
         {
           icon: ListChecks,
           label: "Attendance",
@@ -71,6 +69,12 @@ const data = {
           icon: Medal,
           label: "Results",
           href: "/list/results",
+          visible: ["admin", "teacher", "student", "parent"],
+        },
+        {
+          icon: Calendar,
+          label: "Events",
+          href: "/list/events",
           visible: ["admin", "teacher", "student", "parent"],
         },
       ],
@@ -142,31 +146,6 @@ const data = {
           icon: ClipboardList,
           label: "Assignments",
           href: "/list/assignments",
-          visible: ["admin", "teacher", "student", "parent"],
-        },
-      ],
-    },
-    {
-      title: "Communication & Events",
-      url: "#",
-      icon: Handshake,
-      items: [
-        {
-          icon: MessageCircleMore,
-          label: "Messages",
-          href: "/list/messages",
-          visible: ["admin", "teacher", "student", "parent"],
-        },
-        {
-          icon: Megaphone,
-          label: "Announcements",
-          href: "/list/announcements",
-          visible: ["admin", "teacher", "student", "parent"],
-        },
-        {
-          icon: Calendar,
-          label: "Events",
-          href: "/list/events",
           visible: ["admin", "teacher", "student", "parent"],
         },
       ],

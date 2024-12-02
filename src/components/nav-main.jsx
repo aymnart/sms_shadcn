@@ -31,7 +31,7 @@ export function NavMain({ items }) {
             defaultOpen={item.isActive}
             className=" group/collapsible"
           >
-            <SidebarMenuItem className="py-2">
+            <SidebarMenuItem className="pb-4">
               <CollapsibleTrigger asChild>
                 <SidebarMenuButton
                   className="text-primary"
@@ -43,11 +43,14 @@ export function NavMain({ items }) {
                 </SidebarMenuButton>
               </CollapsibleTrigger>
               <CollapsibleContent>
-                <SidebarMenuSub className="px-4 py-1">
+                <SidebarMenuSub className="px-4 py-2">
                   {item.items?.map((subItem) => {
                     if (subItem.visible.includes(role)) {
                       return (
-                        <SidebarMenuSubItem key={subItem.label}>
+                        <SidebarMenuSubItem
+                          className="hover:outline rounded-md outline-white outline-2"
+                          key={subItem.label}
+                        >
                           <SidebarMenuSubButton>
                             {subItem.icon && <subItem.icon />}
                             <Link to={subItem.href}>{subItem.label}</Link>
@@ -64,4 +67,39 @@ export function NavMain({ items }) {
       </SidebarMenu>
     </SidebarGroup>
   );
+}
+
+{
+  /* <>
+{items.map((item) => (
+  <SidebarGroup key={item.title}>
+    <SidebarGroupLabel className="text-primary">
+      {item.icon && <item.icon />}
+      {item.title}
+    </SidebarGroupLabel>
+    <SidebarMenu>
+      <SidebarMenuItem className="py-2">
+        <SidebarMenuSub className="px-4 py-1">
+          {item.items?.map((subItem) => {
+            if (subItem.visible.includes(role)) {
+              return (
+                <SidebarMenuSubItem
+                  className="hover:outline rounded-md outline-white outline-2"
+                  key={subItem.label}
+                >
+                  <SidebarMenuSubButton>
+                    {subItem.icon && <subItem.icon />}
+                    <Link to={subItem.href}>{subItem.label}</Link>
+                  </SidebarMenuSubButton>
+                </SidebarMenuSubItem>
+              );
+            }
+            return null;
+          })}
+        </SidebarMenuSub>
+      </SidebarMenuItem>
+    </SidebarMenu>
+  </SidebarGroup>
+))}
+</> */
 }

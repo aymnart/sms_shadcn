@@ -1,9 +1,9 @@
 import { Checkbox } from "@/components/ui/checkbox";
-import { DataTableColumnHeader } from "./data-table-column-header";
-import { categories } from "../table-data/table-data";
-import { DataTableRowActions } from "./data-table-row-actions";
+import { DataTableColumnHeader } from "../data-table/components/data-table-column-header";
+import { teachersCategories } from "./table-data/filterable_teacher_columns";
+import { DataTableRowActions } from "../data-table/components/data-table-row-actions";
 
-export const columns = [
+export const teachersColumns = [
   {
     id: "select",
     header: ({ table }) => (
@@ -38,7 +38,7 @@ export const columns = [
       />
     ),
     cell: ({ row }) => (
-      <div className="hidden md:flex w-[80px]">{row.getValue("id")}</div>
+      <div className="hidden md:flex">{row.getValue("id")}</div>
     ),
     enableSorting: true,
     enableHiding: false,
@@ -54,7 +54,11 @@ export const columns = [
           <img
             src={row.getValue("photo")}
             alt=""
-            className="w-7 h-7 rounded-lg"
+            onError={(e) => {
+              e.target.onerror = null; // Prevent infinite loop if default image also fails
+              e.target.src = "/user_default.png"; // Set default image
+            }}
+            className="w-7 h-7 rounded-lg "
           />
           <span className="max-w-[500px] truncate font-medium">
             {row.getValue("name")}
@@ -93,7 +97,7 @@ export const columns = [
       />
     ),
     cell: ({ row }) => {
-      const category = categories.find(
+      const category = teachersCategories.find(
         (category) => category.value === row.getValue("category")
       );
 
@@ -102,7 +106,7 @@ export const columns = [
       }
 
       return (
-        <div className="hidden md:flex w-[100px] items-center">
+        <div className="hidden md:flex items-center">
           {category.icon && (
             <category.icon className="mr-2 h-4 w-4 text-muted-foreground" />
           )}
